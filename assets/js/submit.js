@@ -1,5 +1,5 @@
 // On mouse-over, execute myFunction
-function submit() {
+function submitData() {
     console.log('Submitting Secret Santa');
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://aw5tpxcwq1.execute-api.us-east-1.amazonaws.com/prod/SecretSanta', true);
