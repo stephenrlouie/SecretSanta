@@ -13,17 +13,38 @@ function submitData() {
 }
 
 function addGroup(){
-    console.log("Adding Group")
-    var groups = document.getElementsByClassName = "group"
-    console.log(groups.length)
-    var group = document.createElement('h2');
-    group.value = "group"
-    group.class = "groups" 
-      
     var form = document.getElementById('form');
-    form.appendChild(group);
+    form.appendChild(makeGroup());
 }
 
-function addMember(){
-    console.log("Adding Member")
+// make a div of the group
+function makeGroup() {
+    groupClass = 'groups';
+    var groups = document.getElementsByClassName(groupClass);
+    var index = (groups.length + 1);
+
+    var div = document.createElement('div');
+    div.id = 'group-' + index;
+
+    var newGroup = document.createElement('h2');
+    newGroup.innerHTML = 'Group: ' + index;
+    newGroup.className = groupClass;
+    div.appendChild(newGroup);
+
+    var memButton = document.createElement('input')
+    memButton.type = 'button'
+    memButton.onclick='addMember(this.parentElement.id)'
+    memButton.value='Add Member'
+    return div;
+}
+
+function addMember(thisId){
+    console.log('Adding Member: ' + thisId);
+    makeMember(thisId)
+}
+
+function makeMember(groupId) {
+    var newMem = document.createElement('h4');
+    newMem.innerHTML = 'Member';
+    document.getElementById(groupId).appendChild(newMem)
 }
