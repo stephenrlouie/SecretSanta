@@ -7,6 +7,7 @@ title:            Secret Santa Picker App
 tagline:          'A Secret Santa Assignment Emailer App'
 description:      'Secret Santa with group restriction.'
 url:              https://stephenrlouie.github.io
+#url:              http://192.168.1.13:4000
 baseurl:          '/SecretSanta'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
