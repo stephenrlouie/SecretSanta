@@ -25,24 +25,23 @@ function makeGroup() {
     var div = document.createElement('div');
     div.id = 'group-' + index;
 
-    var newGroup = document.createElement('h2');
+    var newGroup = document.createElement('h4');
     newGroup.innerHTML = 'Group: ' + index;
     newGroup.className = groupClass;
     div.appendChild(newGroup);
 
-    var memButton = document.createElement('input');
-    memButton.id = 'mem-group' + index;
-    memButton.type = 'button';
-    memButton.value = 'Add Member';
-    memButton.className = 'memButton';
-    memButton.onclick = function() { addMember(div.id); };
-    div.appendChild(memButton);
+    var addMemButton = document.createElement('input');
+    addMemButton.id = 'add-mem-group' + index;
+    addMemButton.type = 'button';
+    addMemButton.value = 'Add Member';
+    addMemButton.className = 'addMemButton';
+    addMemButton.onclick = function() { addMember(div.id); };
+    div.appendChild(addMemButton);
 
     return div;
 }
 
 function addMember(thisId){
-    console.log('Adding Member: ' + thisId);
     makeMember(thisId);
 }
 
