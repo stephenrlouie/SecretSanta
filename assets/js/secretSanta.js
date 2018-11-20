@@ -2,11 +2,15 @@ function submitData() {
     console.log('Submitting Secret Santa');
     var xhr = new XMLHttpRequest();
 
-    adminName = document.getElementById("adminName")
-    adminEmail = document.getElementById("adminEmail")
-    spendingLimit = document.getElementById("spendingLimit")
-    date = document.getElementById("date")
+    adminName = document.getElementById("adminName").value
+    adminEmail = document.getElementById("adminEmail").value
+    spendingLimit = document.getElementById("spendingLimit").value
+    date = document.getElementById("date").value
+    // check if empty ^
+
     obj = {"adminEmail": adminEmail, "adminName": adminName, "Limit": spendingLimit, "date": date}
+
+
     // xhr.open('POST', '', true);
     // xhr.setRequestHeader('Content-Type', 'application/json');
     // xhr.setRequestHeader('X-Api-Key', 'cUcgmypG1F8GT4STl7y1O5zPwEdkGCTqhkut6vY8');
@@ -61,7 +65,7 @@ function makeMember(id) {
 
     var nameInput = document.createElement('input');
     nameInput.type = "text";
-    nameInput.id = index + "-name-" + p.className;
+    nameInput.id = "name-mem-" + index + "-" + id;
 
     var nameLabel = document.createElement('label');
     nameLabel.for = name.id 
@@ -72,7 +76,7 @@ function makeMember(id) {
 
     var emailInput = document.createElement('input');
     emailInput.type = "text";
-    emailInput.id = index + "-email-" + p.className;
+    emailInput.id = "email-mem-" + index + "-" + id;
 
     var emailLabel = document.createElement('label');
     emailLabel.for = name.id 
