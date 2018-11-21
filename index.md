@@ -1,18 +1,18 @@
 ---
 layout: form
-title: What is this secret santa picker?
+title: Secret Santa picker?
 ---
-This is a secret santa picker, that will help a single person organize and participate in a secret santa gift exchange without knowing the assignments. Each individual will be privately emailed their assignment.
+This is a Secret Santa picker, that will help a single person organize and participate in a Secret Santa gift exchange without knowing the assignments. Each individual will be privately emailed their assignment. If you have an issue or a feature request, please create an [issue](https://github.com/stephenrlouie/SecretSanta/issues). If you require assistance or want to provide feedback you can also email [secret.santa.picker.help@gmail.com](mailto:secret.santa.picker.help@gmail.com)
 
-## How are we different?
-We do not store any information. All emails are ephemeral and only known during the runtime of the application. We do not have ads. We also support anti-affinity assignments for secret santa exchanges.
+## How is this different?
+Secret Santa Picker App does not store any information. All information that is submitted is ephemeral and only known during the runtime of the application. Sent emails are deleted shortly after they are sent. We do not have ads. We also support anti-affinity assignments for secret santa exchanges.
 
 ## What is anti-affinity?
-A member of a group cannot receive or give a gift to another member in their group.
+A member of a group cannot receive or give a gift to another member in the same group.
 
-For example, if we have four couples exchanging gifts. You would create four groups, each containing the couples. This will ensure those couples will not be assigned to one another.
+For example, if we have four couples exchanging gifts. You would create four groups, each containing a couple. This will ensure those couples will not be assigned to one another.
 
-For an exchange of six individuals, you would create 6 groups each with one member.
+For an exchange of six individuals, you would create 6 groups each with one member. 
 
 ## Example Email
 

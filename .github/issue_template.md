@@ -1,3 +1,11 @@
-Thank you for submitting an issue!
+*Please do not include personal information in this form, such as emails, and names.* 
 
-Please only submit bug reports or feature suggestions. Please do not submit support requests and general help questions in this forum.
+# Describe the bug / feature
+
+## Describe steps to reproduce
+
+## Device
+
+## Browser  & Version
+
+## Expected Behavior vs Actual Behavior
