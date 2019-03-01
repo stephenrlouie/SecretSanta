@@ -8,7 +8,7 @@ tagline:          'A Secret Santa Assignment Emailer App'
 description:      'Secret Santa with group restriction.'
 url:              https://secretsanta.dev
 #url:              http://192.168.1.13:4000
-baseurl:          '/SecretSanta'
+baseurl:          '/'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
                   # If you want to move just the blog index pages but keep
