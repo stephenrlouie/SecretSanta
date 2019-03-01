@@ -4,7 +4,7 @@ title: Secret Santa picker?
 ---
 This is a Secret Santa picker, that will help a single person organize and participate in a Secret Santa gift exchange without knowing the assignments. Each individual will be privately emailed their assignment. All participants will receive an email from **secret.santa.picker.app@gmail.com**. After submitting, please ensure all participants have received their assignments, emails may be filtered to a spam folder.
 
-If you have an issue or a feature request, please create an [issue](https://github.com/stephenrlouie/SecretSanta/issues). If you require assistance or want to provide feedback you can also email [secret.santa.picker.help@gmail.com](mailto:secret.santa.picker.help@gmail.com)
+If you have an issue or a feature request, please create an [issue](https://github.com/stephenrlouie/SecretSanta/issues). If you require assistance or want to provide feedback you can also email [help@secretsanta.dev](mailto:help@secretsanta.dev)
 
 ## How is this different?
 Secret Santa Picker App does not store any information. All information that is submitted is ephemeral and only known during the runtime of the application. Sent emails are deleted shortly after they are sent. We do not have ads. We also support anti-affinity assignments for secret santa exchanges.
