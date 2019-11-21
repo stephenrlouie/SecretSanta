@@ -6,7 +6,7 @@ highlighter:      rouge
 title:            Secret Santa Picker App
 tagline:          'A Secret Santa Assignment Emailer App'
 description:      'Secret Santa with group restriction.'
-url:              https://secretsanta.dev
+url:              https://stevelouie.com/SecretSanta
 #url:              http://192.168.1.13:4000
 baseurl:          '/'
                   # the optional subpath of your site, e.g. "/blog"
