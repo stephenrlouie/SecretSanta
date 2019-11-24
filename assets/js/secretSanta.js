@@ -46,7 +46,7 @@ function submitData() {
     xhr.open('POST', 'https://aw5tpxcwq1.execute-api.us-east-1.amazonaws.com/prod/SecretSanta', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('X-Api-Key', 'cUcgmypG1F8GT4STl7y1O5zPwEdkGCTqhkut6vY8');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://stephenrlouie.github.io');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://stevelouie.com');
     xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type,X-Api-Key,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods');
     xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
     xhr.send(JSON.stringify(obj));
