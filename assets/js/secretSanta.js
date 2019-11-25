@@ -43,12 +43,11 @@ function submitData() {
 
     obj.groups = stuff;
     
-    xhr.open('POST', 'https://aw5tpxcwq1.execute-api.us-east-1.amazonaws.com/prod/SecretSanta', true);
+    xhr.open('POST', 'https://8fvjba9w9c.execute-api.us-east-1.amazonaws.com/default/SecretSanta', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('X-Api-Key', 'cUcgmypG1F8GT4STl7y1O5zPwEdkGCTqhkut6vY8');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://stevelouie.com');
-    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type,X-Api-Key,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods');
-    xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://secretsanta.dev');
+    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods');
+    xhr.setRequestHeader('Access-Control-Allow-Methods', 'OPTIONS,POST');
     xhr.send(JSON.stringify(obj));
     console.log("Sent");
     alert("Thank you for submitting your Secret Santa! You should receive an admin email confirming distribution. Please check your spam folder too.")
