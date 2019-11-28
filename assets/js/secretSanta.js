@@ -47,7 +47,6 @@ function submitData() {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('X-Api-Key', 'wx6EBcDdV57GOAhzaleRu4cQCmqSPFLN8ruzbb7e');
     xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://secretsanta.dev');
-    // xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods');
     xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type,X-Api-Key,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods');
     xhr.setRequestHeader('Access-Control-Allow-Methods', 'OPTIONS,POST');
     xhr.send(JSON.stringify(obj));
