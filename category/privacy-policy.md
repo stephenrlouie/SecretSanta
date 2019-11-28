@@ -5,7 +5,7 @@ title: Privacy Policy
 
 Effective date: November 1, 2018
 
-Secret Santa Picker App ("us", "we", or "our") operates the [https://stevelouie.com/SecretSanta](https://stevelouie.com/SecretSanta) website (hereinafter referred to as the "Service").
+Secret Santa Picker App ("us", "we", or "our") operates the [https://secretsanta.dev/](https://secretsanta.dev/) website (hereinafter referred to as the "Service").
 
 This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
@@ -71,4 +71,4 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 ## Contact Us
 If you have any questions about this Privacy Policy, please contact us:
     - By email: [secret.santa.picker.help@gmail.com](mailto:secret.santa.picker.help@gmail.com)
-    - By visiting this page on our website: https://stevelouie.com/SecretSanta/category/privacy-policy.html
+    - By visiting this page on our website: https://secretsanta.dev/category/privacy-policy.html
