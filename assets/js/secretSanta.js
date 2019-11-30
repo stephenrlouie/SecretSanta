@@ -110,6 +110,11 @@ function addGroup(){
     form.appendChild(makeGroup());
 }
 
+function deleteGroup(id){
+    var group = document.getElementById(id);
+    form.removeChild(group);
+}
+
 // make a div of the group
 function makeGroup() {
     groupClass = 'groups';
@@ -123,6 +128,14 @@ function makeGroup() {
     newGroup.className = groupClass;
     div.appendChild(newGroup);
 
+    var deleteGroupButton = document.createElement('input');
+    deleteGroupButton.id = 'delete-group-' + index;
+    deleteGroupButton.type = 'button';
+    deleteGroupButton.value = 'Delete Group ' + index;
+    deleteGroupButton.className = 'deleteGroupButton';
+    deleteGroupButton.onclick = function() { deleteGroup(div.id); };
+    div.appendChild(deleteGroupButton);
+    
     var addMemButton = document.createElement('input');
     addMemButton.id = 'add-mem-group-' + index;
     addMemButton.type = 'button';
