@@ -124,14 +124,14 @@ function makeGroup() {
     div.id = 'group-' + index;
 
     var newGroup = document.createElement('h4');
-    newGroup.innerHTML = 'Group: ' + index;
+    newGroup.innerHTML = 'Group';
     newGroup.className = groupClass;
     div.appendChild(newGroup);
 
     var deleteGroupButton = document.createElement('input');
     deleteGroupButton.id = 'delete-group-' + index;
     deleteGroupButton.type = 'button';
-    deleteGroupButton.value = 'Delete Group ' + index;
+    deleteGroupButton.value = 'Delete Group';
     deleteGroupButton.className = 'deleteGroupButton';
     deleteGroupButton.onclick = function() { deleteGroup(div.id); };
     div.appendChild(deleteGroupButton);
@@ -151,10 +151,15 @@ function addMember(thisId){
     makeMember(thisId);
 }
 
+function deleteMember(id){
+    document.getElementById(id).remove();
+}
+
 function makeMember(id) {
     var p = document.createElement('p');
-    p.className = "mem-"+id;
+    p.className = "mem-" + id;
     var index = document.getElementsByClassName(p.className).length + 1;
+    p.id = "mem-" + index + "-" + id;
 
     document.getElementById(id).appendChild(p);
 
@@ -179,6 +184,14 @@ function makeMember(id) {
 
     p.append(emailLabel)
     p.appendChild(emailInput)
+
+    var deleteMemberButton = document.createElement('input');
+    deleteMemberButton.id = 'delete-member-' + index;
+    deleteMemberButton.type = 'button';
+    deleteMemberButton.value = 'Delete Member' ;
+    deleteMemberButton.className = 'deleteMemberButton';
+    deleteMemberButton.onclick = function() { deleteMember("mem-" + index + "-" + id); };
+    p.appendChild(deleteMemberButton);
 }
 
 function isValidEmail(email) {
