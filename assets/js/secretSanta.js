@@ -70,14 +70,13 @@ function fetchMembers(){
         memCount = document.getElementsByClassName("mem-group-" + groupNum).length;
         
         if (memCount == 0) {
-            alert("A group must contain at least one member")
-            return false
+            console.log("Group is empty. skipping")
+            continue
         }
 
         groupArray[g] = new Array(memCount)
         for (var m = 0; m < memCount; m++){
             memNum = m + 1;
-            // only add if not empty
             n = document.getElementById("name-mem-" + memNum + "-group-" + groupNum).value.trim()
             if (!isValidName(n)){
                 alert(n + " is a duplicate or empty")
