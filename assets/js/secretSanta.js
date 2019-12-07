@@ -1,44 +1,44 @@
 function submitData() {
-    names = []
+    names = [];
     console.log('Submitting Secret Santa');
     var xhr = new XMLHttpRequest();
 
     // collecting high level data
     adminName = document.getElementById("adminName").value.trim();
     if (adminName == "") {
-        alert("Admin name is empty")
-        return
+        alert("Admin name is empty");
+        return;
     }
 
     adminEmail = document.getElementById("adminEmail").value.trim();
     if (!isValidEmail(adminEmail)) {
-        alert(adminEmail + ": is not a valid admin email")
-        return
+        alert(adminEmail + ": is not a valid admin email");
+        return;
     }
 
     spendingLimit = document.getElementById("spendingLimit").value.trim();
     if (spendingLimit == "") {
-        alert("spending limit is empty")
-        return
+        alert("spending limit is empty");
+        return;
     }
 
     date = document.getElementById("date").value.trim();
     if (date == ""){
-        alert("date is empty")
-        return
+        alert("date is empty");
+        return;
     }
 
     title = document.getElementById("title").value.trim();
     if (title == ""){
-        alert("title is empty")
-        return
+        alert("title is empty");
+        return;
     }
 
     obj = {"adminEmail": adminEmail, "adminName": adminName, "limit": spendingLimit, "date": date, "title": title};
 
     stuff = fetchMembers();
     if (stuff == false) {
-        return
+        return;
     }
 
     obj.groups = stuff;
@@ -51,57 +51,61 @@ function submitData() {
     xhr.setRequestHeader('Access-Control-Allow-Methods', 'OPTIONS,POST');
     xhr.send(JSON.stringify(obj));
     console.log("Sent");
-    alert("Thank you for submitting your Secret Santa! You should receive an admin email confirming distribution. Please check your spam folder too.")
-    location.reload()
+    alert("Thank you for submitting your Secret Santa! You should receive an admin email confirming distribution. Please check your spam folder too.");
+    location.reload();
 }
 
 function fetchMembers(){
     var max = 0;
     var total = 0;
-    groupCount = document.getElementsByClassName("groups").length;
-    if (groupCount <= 1) {
-        alert("More than 1 group must exist")
-        return false
+    groupLen = document.getElementsByClassName("groups").length;
+
+    if (groupLen <= 1) {
+        alert("More than 1 group must exist");
+        return false;
     }
 
-    groupArray = new Array(groupCount)
-    for (var g = 0; g < groupCount; g++) {
-        groupNum = g + 1;
-        memCount = document.getElementsByClassName("mem-group-" + groupNum).length;
+    groupArray = new Array(groupLen);
+    var groupCount = 0;
+    for(g = 0; groupCount < groupLen; g++) {
+        memLen = document.getElementsByClassName("mem-group-" + g).length;
+        if (memLen == 0) {
+            continue;
+        }
+        groupCount++;
         
-        if (memCount == 0) {
-            console.log("Group is empty. skipping")
-            continue
-        }
+        groupArray[g] = new Array(memLen);
+        var memCount = 0;
+        for (var m = 0; memCount < memLen; m++){
+            if (document.getElementById("name-mem-" + m + "-group-" + g) == null ){
+                continue;
+            }
+            memCount++;
 
-        groupArray[g] = new Array(memCount)
-        for (var m = 0; m < memCount; m++){
-            memNum = m + 1;
-            n = document.getElementById("name-mem-" + memNum + "-group-" + groupNum).value.trim()
+            n = document.getElementById("name-mem-" + m + "-group-" + g).value.trim();
             if (!isValidName(n)){
-                alert(n + " is a duplicate or empty")
-                return false
+                alert(n + " is a duplicate or empty");
+                return false;
             }
-            e = document.getElementById("email-mem-" + memNum + "-group-" + groupNum).value.trim()
+            e = document.getElementById("email-mem-" + m + "-group-" + g).value.trim();
             if (!isValidEmail(e)) {
-                alert(e + " is not a valid email")
-                return false
+                alert(e + " is not a valid email");
+                return false;
             }
-            mem = {"name": n, "email": e}
-            groupArray[g][m] = mem
+            mem = {"name": n, "email": e};
+            groupArray[g][m] = mem;
         }
-        l = groupArray[g].length
-        total += l
-        if (max < l){
-            max = l
+        total += memLen;
+        if (max < memLen){
+            max = memLen;
         }
     }
 
     if (max > (total-max)){
-        alert("The largest group " + max + "is too large to make valid assignments. " + total)
-        return false
+        alert("The largest group " + max + "is too large to make valid assignments across the rest " + total);
+        return false;
     }
-    return groupArray
+    return groupArray;
 }
 
 function addGroup(){
@@ -117,8 +121,16 @@ function deleteGroup(id){
 // make a div of the group
 function makeGroup() {
     groupClass = 'groups';
-    var index = document.getElementsByClassName(groupClass).length + 1;
-
+    var length = document.getElementsByClassName(groupClass).length;
+    var previousItem = document.getElementsByClassName(groupClass).item(length-1);
+    var index = 0;
+    // handles getting the class index out of the previous div, so we don't repeat indices on delete->add
+    if (previousItem != null) {
+        parent = previousItem.parentElement;
+        splitArray = parent.id.split("-");
+        index = parseInt(splitArray[1]) + 1;
+    }
+    
     var div = document.createElement('div');
     div.id = 'group-' + index;
 
@@ -157,7 +169,14 @@ function deleteMember(id){
 function makeMember(id) {
     var p = document.createElement('p');
     p.className = "mem-" + id;
-    var index = document.getElementsByClassName(p.className).length + 1;
+    var length = document.getElementsByClassName(p.className).length;
+    var previousItem = document.getElementsByClassName(p.className).item(length-1);
+    var index = 0;
+    // handles getting the class index out of the previous div, so we don't repeat indices on delete->add
+    if (previousItem != null) {
+        splitArray = previousItem.id.split("-");
+        index = parseInt(splitArray[1]) + 1;
+    }
     p.id = "mem-" + index + "-" + id;
 
     document.getElementById(id).appendChild(p);
@@ -167,27 +186,27 @@ function makeMember(id) {
     nameInput.id = "name-mem-" + index + "-" + id;
 
     var nameLabel = document.createElement('label');
-    nameLabel.for = name.id 
-    nameLabel.innerHTML = "Name: "
+    nameLabel.for = name.id ;
+    nameLabel.innerHTML = "Name: ";
 
-    p.append(nameLabel)
-    p.appendChild(nameInput)
+    p.append(nameLabel);
+    p.appendChild(nameInput);
 
     var emailInput = document.createElement('input');
     emailInput.type = "text";
     emailInput.id = "email-mem-" + index + "-" + id;
 
     var emailLabel = document.createElement('label');
-    emailLabel.for = name.id 
-    emailLabel.innerHTML = "Email: "
+    emailLabel.for = name.id;
+    emailLabel.innerHTML = "Email: ";
 
-    p.append(emailLabel)
-    p.appendChild(emailInput)
+    p.append(emailLabel);
+    p.appendChild(emailInput);
 
     var deleteMemberButton = document.createElement('input');
     deleteMemberButton.id = 'delete-member-' + index;
     deleteMemberButton.type = 'button';
-    deleteMemberButton.value = 'Delete Member' ;
+    deleteMemberButton.value = 'Delete Member';
     deleteMemberButton.className = 'deleteMemberButton';
     deleteMemberButton.onclick = function() { deleteMember("mem-" + index + "-" + id); };
     p.appendChild(deleteMemberButton);
@@ -195,17 +214,17 @@ function makeMember(id) {
 
 function isValidEmail(email) {
     if (email == "") {
-        return false
+        return false;
     }
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
-var names = []
+var names = [];
 function isValidName(name) {
     if (name == "" || names.includes(name)){
-        return false
+        return false;
     }
-    names.push(name)
-    return true
+    names.push(name);
+    return true;
 }
