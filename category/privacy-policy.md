@@ -12,7 +12,7 @@ This page informs you of our policies regarding the collection, use, and disclos
 
 ## Information Collection And Use
 
-The Service does not persist any information provided in the form. The information collected is ephemeral and only exists during the execution of the secret Santa picker application. If you email for help / feedback at [secret.santa.picker.help@gmail.com](mailto:secret.santa.picker.help@gmail.com), that information will be persisted. We use it to improve our service or too address an issue brought to our attention.
+The Service does not persist any information provided in the form. The information collected is ephemeral and only exists during the execution of the secret Santa picker application. If you email for help / feedback at [help@secretsanta.dev](mailto:help@secretsanta.dev), that information will be persisted. We use it to improve our service or too address an issue brought to our attention.
 
 ### Types of Data Collected and Persisted
 
@@ -61,7 +61,7 @@ We have no control over and assume no responsibility for the content, privacy po
 
 ## Children's Privacy
 Our Service does not address anyone under the age of 18 ("Children").
-We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers. Please contact us at secret.santa.picker.help@gmail.com immediately.
+We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers. Please contact us at help@secretsanta.dev immediately.
 
 ## Changes To This Privacy Policy
 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
@@ -70,5 +70,5 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 
 ## Contact Us
 If you have any questions about this Privacy Policy, please contact us:
-    - By email: [secret.santa.picker.help@gmail.com](mailto:secret.santa.picker.help@gmail.com)
+    - By email: [help@secretsanta.dev](mailto:help@secretsanta.dev)
     - By visiting this page on our website: https://secretsanta.dev/category/privacy-policy.html
