@@ -20,10 +20,12 @@ For an exchange of six individuals, you would create 6 groups each with one memb
 
 Hi \<NAME-1>,
 
-\<ADMIN-NAME> invites you to join the \<TITLE> Secret Santa on \<DATE>. The spending limit is \<SPENDING-AMOUNT>. Your secret santa assignment is \<NAME-2>.
+\<ADMIN-NAME> invites you to join the \<TITLE> Secret Santa. Your secret santa assignment is \<NAME-2>.
+
+Here's a link from \<ADMIN-NAME> with more information: \<LINK>
 
 Merry Christmas!!
 
-Secret Santa Picker App
+Secret Santa Picker
 
 ## Fill this out and Merry Christmas!

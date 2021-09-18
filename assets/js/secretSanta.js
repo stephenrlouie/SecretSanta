@@ -16,25 +16,15 @@ function submitData() {
         return;
     }
 
-    spendingLimit = document.getElementById("spendingLimit").value.trim();
-    if (spendingLimit == "") {
-        alert("spending limit is empty");
-        return;
-    }
-
-    date = document.getElementById("date").value.trim();
-    if (date == ""){
-        alert("date is empty");
-        return;
-    }
-
     title = document.getElementById("title").value.trim();
     if (title == ""){
         alert("title is empty");
         return;
     }
 
-    obj = {"adminEmail": adminEmail, "adminName": adminName, "limit": spendingLimit, "date": date, "title": title};
+    shareLink = document.getElementById("shareLink").value.trim();
+
+    obj = {"adminEmail": adminEmail, "adminName": adminName, "title": title, "shareLink": shareLink};
 
     stuff = fetchMembers();
     if (stuff == false) {
